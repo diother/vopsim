@@ -1,0 +1,86 @@
+body.woocommerce-checkout .wc_payment_methods {
+    padding: $mobileSides;
+    border: 1px solid $line-grey;
+    border-radius: 4px;
+
+    .payment_box {
+        margin-top: 15px;
+        padding-top: 15px;
+        border-top: 1px solid $line-grey;
+    }
+    #wc-stripe-cc-form {
+        margin-top: 10px;
+        border: none;
+
+        .form-row {
+            position: relative;
+            margin-top: 15px;
+        }
+        .wc-stripe-elements-field {
+            padding: 15px;
+        }
+        label { 
+            font-size: 14px;
+            line-height: 100%;
+            position: absolute;
+            left: 16px;
+            top: 13px;
+            color: #000;
+            background: #fff;
+            pointer-events: none;
+            z-index: 1;
+    
+            .required {
+                display: none;
+            }
+        }
+        .wc-stripe-elements-field {
+            margin: 0;
+            width: 100%;
+            padding: 35px 15px 13px;
+            transition: inherit;
+            border: 1px #000 solid;
+            border-radius: 4px;
+        }
+        .stripe-card-brand {
+            right: 15px !important;
+        }
+    }
+    .payment_method_stripe > label {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+
+        &:after {
+            content: '';
+            background-image: url('/media/icons/card-icons.webp');
+            background-size: cover;
+            width: 160px;
+            aspect-ratio: 321 / 48;
+            display: block;
+            margin-bottom: 2px;
+        }
+    }
+    @include tablet {
+        padding: $tabletSides;
+    }
+    @include laptop {
+        .wc-credit-card-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 15px;
+
+            .stripe-source-errors,
+            .form-row:first-child {
+                grid-column: 1 / 3;
+            }
+        }
+        
+        .payment_method_stripe > label {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+}

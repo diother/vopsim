@@ -1,0 +1,35 @@
+.quantity {
+    display: flex;
+    @include center-child;
+    gap: 2px;
+
+    input[type="number"] {
+        width: 35px;
+        border: none;
+        text-align: center;
+    }
+    .minus, .plus {
+        position: relative;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background: $bg-blue;
+        cursor: pointer;
+    }
+    i:before, i:after {
+        content: "";
+        position: absolute;
+        width: 15px;
+        height: 2px;
+        background: $text-color;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .minus i:after {
+        display: none;
+    }
+    i:after {
+        transform: translate(-50%, -50%) rotate(90deg);
+    }
+}

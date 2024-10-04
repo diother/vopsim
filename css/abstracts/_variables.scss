@@ -1,0 +1,27 @@
+$bg-blue: #C7DBE1;
+$text-color: #1D1D1D;
+$primary-blue: #0086B0;
+$secondary-blue: #00434D;
+
+// Colors
+$bg-grey: #EEEEEE;
+$line-grey: #cdcdcd;
+$text-grey: #868686;
+
+// Borders
+$border: 1px solid $text-color;
+
+// Shadows
+$shadow: 0 10px 20px rgba(171, 120, 118, .3);
+$base-shadow: 25px 25px 50px rgba(29, 29, 29, 0.25);
+
+// Transitions
+$transition: cubic-bezier(0.39, 0.575, 0.565, 1);
+
+// Side Margin
+$mobileSides: 20px;
+$tabletSides: 25px;
+$desktopSides: 50px;
+
+// Desktop Container Width
+$desktopWidth: 1280px;

@@ -1,0 +1,103 @@
+body.archive .content-area {
+    .title-container {
+        padding: 15px $mobileSides 25px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        border-bottom: 1px solid $line-grey;
+
+        header {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }   
+    }
+    .product-filters {
+        display: flex;
+        padding: 25px 0 0;
+        gap: 10px;
+    }
+    .filters {
+        @include center-child-vertically;
+        gap: 15px;
+        padding: 15px;
+        border: $border;
+        border-left: none;
+        flex-shrink: 0;
+        width: calc(50% - 5px);
+        
+        svg {
+            width: 20px;
+            height: auto;
+        }
+    }
+    .sort {
+        border: $border;
+        border-right: none;
+        cursor: pointer;
+        font-family: inherit;
+        position: relative;
+        width: calc(50% - 5px);
+        flex-shrink: 0;
+    
+        select {
+            height: 100%;
+            padding: 15px;
+        }
+        &:after {
+            content: '';
+            width: 12px;
+            height: 12px;
+            border-style: solid;
+            border-width: 2px 2px 0 0;
+            display: block;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-75%) rotate(135deg);
+            right: 15px;
+        }
+    }
+    .products {
+        padding: 25px 0 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 10px;
+        row-gap: 25px;
+    }
+    @include tablet {
+        .title-container {
+            padding: 15px $tabletSides 25px;
+        }
+        .product-filters {
+            padding: 25px $tabletSides 0;
+
+            .filters, .sort {
+                border: $border;
+            }
+        }
+        .products {
+            padding: 25px $tabletSides 0;
+        }
+    }
+    @include laptop {
+        .product-filters {
+            display: none;
+        }
+        .products {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+    @include desktop {
+        .title-container {
+            max-width: $desktopWidth;
+            margin: 0 auto;
+            box-sizing: content-box;
+        }
+        .products {
+            max-width: $desktopWidth;
+            margin: 0 auto 0;
+            box-sizing: content-box;
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+}

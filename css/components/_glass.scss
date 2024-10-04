@@ -1,0 +1,19 @@
+.glass {
+    position: relative;
+    background-image: linear-gradient(to bottom right, rgba(255, 255, 255, .4), rgba(255, 255, 255, 0));
+    border-radius: 4px;
+    backdrop-filter: blur(40px);
+    border: 2px solid rgba(0, 134, 176, .25);
+
+    &:after {
+        content: '';
+        background-image: url('/media/glass-overlay.webp');
+        opacity: .2;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-size: contain;
+    }
+}

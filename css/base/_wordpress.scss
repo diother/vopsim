@@ -1,0 +1,19 @@
+body.admin-bar {
+    header {
+        top: 46px;
+
+        &.nav-up {
+            top: calc(46px - 80px);
+        }
+        @include breakpoint(783px) {
+            top: 32px;
+
+            &.nav-up {
+                top: calc(32px - 80px);
+            }
+        }
+    }
+    #wpadminbar {
+        position: fixed;
+    }
+}

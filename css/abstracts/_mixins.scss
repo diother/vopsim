@@ -1,0 +1,36 @@
+// Screen breakpoints
+@mixin breakpoint($breakpoint) {
+    @media (min-width: $breakpoint) {
+        @content;
+    }
+}
+@mixin tablet {
+    @media (min-width: 640px) {
+        @content;
+    }
+}
+@mixin laptop {
+    @media (min-width: 960px) {
+        @content;
+    }
+}
+@mixin desktop {
+    @media (min-width: 1280px) {
+        @content;
+    }
+}
+
+// Center mixins
+@mixin center-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin center-child-vertically {
+    display: flex;
+    align-items: center;
+}
+@mixin center-child-horizontally {
+    display: flex;
+    justify-content: center;
+}

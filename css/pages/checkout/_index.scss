@@ -1,0 +1,29 @@
+body.woocommerce-checkout .content-area {
+    width: 100%;
+    
+    a {
+        color: $primary-blue;
+    }
+    h3 {
+        font-weight: 900;
+        font-size: 24px;
+        line-height: 120%;
+        overflow: hidden;
+    }
+    @include breakpoint(770px) {
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+    @include desktop {
+        .grid-container {
+            grid-template-columns: 4fr 3fr;
+            background: #fff;
+            max-width: $desktopWidth;
+            box-sizing: content-box;
+            margin: -250px auto 0;
+            border-radius: 25px 25px 0 0 ;
+        }
+    }
+}

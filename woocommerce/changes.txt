@@ -1,0 +1,12 @@
+##################### CART
+---- cart-empty.php
+1. Add button tags around link element
+
+---- cart.php
+1. Remove table thead
+2. Remove product price
+3. Remove cart collaterals
+
+##################### CHECKOUT
+---- review-order.php
+1. Remove space and times in the td.product-name both name and quantity

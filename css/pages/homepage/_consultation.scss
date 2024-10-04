@@ -1,0 +1,138 @@
+.consultation-section {
+    padding: 100px $mobileSides;
+    background: $primary-blue;
+    color: #fff;
+    position: relative;
+
+    .center-container {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+    }
+    .text-container {
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
+
+        h1, p {
+            text-align: center;
+        }
+    }
+    .button-container {
+        button {
+            width: 100%;
+        }
+        span {
+            display: none;
+        }
+    }
+    .img-container {
+        position: relative;
+        padding: 50px 15px;
+        color: $text-color;
+        z-index: 1;
+
+        .points-desktop {
+            display: none;
+        }
+    }
+    .control-panel {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 15px;
+        background: $secondary-blue;
+        display: flex;
+        gap: 5px;
+        align-items: center;
+        padding-left: 15px;
+        border-radius: 4px 4px 0 0;
+    }
+    .circle {
+        width: 8px;
+        height: 8px;
+        border-radius: 100%;
+
+        &:first-child {
+            background: #DDDDDD;
+        }
+        &:nth-child(2) {
+            background: #7E7E7E;
+        }
+        &:nth-child(3) {
+            background: #6b6b6b;
+        }
+    }
+    .info {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    .bullet {
+        padding: 7px 10px;
+        background: $bg-blue;
+        z-index: 2;
+    }
+    @include tablet {
+        padding: 100px $tabletSides;
+
+        .text-container {
+            h1, p {
+                text-align: start;
+            }
+        }
+        .button-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            
+            span {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+
+                &:before {
+                    content: 'I';
+                    font-size: 22px;
+                    width: 32px;
+                    height: 32px;
+                    @include center-child;
+                    transform: rotate(90deg);
+                }
+            }
+        }
+    }
+    @include laptop {
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 65%;
+            background: url('/media/model-dark.svg');
+            background-size: contain;
+            background-position: center;
+            opacity: .03;
+        }
+        .center-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 100px;
+        }
+        .img-container {
+            max-width: none;
+        }
+    }
+    @include desktop {
+        padding: 200px $tabletSides;
+
+        .center-container {
+            max-width: $desktopWidth;
+            margin: 0 auto;
+            box-sizing: content-box;
+        }
+    }
+}

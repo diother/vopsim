@@ -1,0 +1,104 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    -webkit-tap-highlight-color: transparent;
+}
+body {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    color: $text-color;
+
+    .content-area {
+        flex: 1;
+    }
+}
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+    user-drag: none;
+    -webkit-user-drag: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+a {
+    text-decoration: none;
+    color: #000;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+input {
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+    &[type=number] {
+        -moz-appearance: textfield;
+    }
+    &[type=text] {   
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+    }
+    &:focus{
+        outline: none;
+    }
+}
+button {
+    &:hover {
+        cursor: pointer;
+    }
+}
+select {
+    appearance: none;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: inherit;
+    line-height: inherit;
+    outline: none;
+
+    &::-ms-expand {
+        display: none;
+    }
+    &:focus {
+        outline: none;
+        background-color: transparent;
+    }
+}
+ol, ul {
+    list-style-type: none;
+}
+.prevent-select {
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none; 
+}
+table, thead, tbody, tfoot, tr, td {
+    display: block;
+}
+svg {
+    display: block;
+}
+select {
+    color: #000;
+}
+hr {
+    height: 1px;
+    background-color: $line-grey;
+    border: none;
+}

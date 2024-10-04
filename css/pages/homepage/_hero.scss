@@ -1,0 +1,182 @@
+.hero-section {
+    padding: 50px $mobileSides 20vw;
+    background: $bg-blue;
+    position: relative;
+
+    .center-container {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 20vw;
+        z-index: 1;
+    }
+    .text-container {
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
+
+        h1, p {
+            text-align: center;
+        }
+    }
+    .button-container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        button {
+            width: 100%;
+        }
+    }
+    .img-container {
+        position: relative;
+        max-width: 550px;
+        margin: 0 auto;
+        padding: calc((45% - ((100% - 30px) / 4)) / 2) 0;
+    }
+    .panel {
+        width: 90%;
+        aspect-ratio: 2 / 1;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        box-shadow: $base-shadow;
+
+        .scrollbar {
+            height: 4px;
+            border-radius: 4px;
+            background: $bg-blue;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+
+            &:after {
+                content: '';
+                width: 15%;
+                height: 4px;
+                border-radius: 4px;
+                background: $primary-blue;
+                position: absolute;
+                left: 25%;
+            }
+        }
+    }
+    .texture-container {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+
+        img {
+            z-index: 1;
+            box-shadow: $base-shadow;
+        }
+        .selected {
+            position: relative;
+            border: 2px $primary-blue solid;
+            box-shadow: $base-shadow;
+
+            span {
+                color: #fff;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-weight: 800;
+            }
+            svg {
+                width: 25px;
+                height: auto;
+                position: absolute;
+                bottom: -10px;
+                right: -5px;
+            }
+        }
+    }
+    .background {
+        position: absolute;
+        background-image: url('/media/hero-image.webp');
+        left: 0;
+        right: 0;
+        bottom: 0;
+        aspect-ratio: 4 / 3;
+        background-size: cover;
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-image: linear-gradient(to bottom, rgba(199, 219, 225, 1) 6%, transparent 50%);
+        }
+    }
+    @include tablet {
+        padding: 50px $tabletSides 20vw;
+
+        .text-container {
+            align-items: center;
+        }
+        .button-container {
+            flex-direction: row;
+        }
+    }
+    @include laptop {
+        padding: 150px $tabletSides 200px;
+
+        .center-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 75px;
+            align-items: center;
+        }
+        .text-container {
+            display: flex;
+            flex-direction: column;
+            gap: 35px;
+            align-items: flex-start;
+            
+            h1, p {
+                text-align: start;
+            }
+        }
+        .button-container button {
+            width: fit-content;
+        }
+        .img-container {
+            margin: auto;
+            max-width: none;
+        }
+        .texture-container {
+            gap: 15px;
+        }
+        .background {
+            top: -80px;
+            left: auto;
+            aspect-ratio: 1211 / 830;
+    
+            &:after {
+                content: '';
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background-image: linear-gradient(to right, rgba(199, 219, 225, 1) 45%, transparent 70%);
+            }
+        }
+    }
+    @include desktop {
+        .center-container {
+            max-width: $desktopWidth;
+            margin: 0 auto;
+            box-sizing: content-box;
+        }
+        .background:after {
+            background-image: linear-gradient(to right, rgba(199, 219, 225, 1) 13%, transparent 60%);
+        }
+    }
+}

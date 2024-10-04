@@ -1,0 +1,116 @@
+body.woocommerce-checkout {
+    #order_review_heading {
+        margin-top: 35px;
+    }
+    .content-area #order_review {
+        margin-top: 15px;
+
+        button {
+            margin-top: 25px;
+            width: 100%;
+        }
+        #payment {
+            margin-top: 15px;
+        }
+        & > h3 {
+            margin-top: 35px;
+        }
+    }
+    .woocommerce-checkout-review-order-table {
+        padding: $mobileSides;
+        border: 1px solid $line-grey;
+        border-radius: 4px;
+
+        thead {
+            display: none;
+        }
+        tbody {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid $line-grey;
+        }
+        tfoot {
+            padding-top: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+    
+            tr {
+                display: flex;
+                justify-content: space-between;
+                gap: 50px;
+            }
+            th {
+                font-weight: 500;
+            }
+            .cart-subtotal,
+            .woocommerce-shipping-totals {
+                padding-bottom: 15px;
+                border-bottom: 1px solid $line-grey;
+            }
+            #shipping_method {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+
+                li {
+                    display: flex;
+                    gap: 10px;
+                    align-items: center;
+                }
+            }
+        }  
+        .cart_item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+    
+            .product-name {
+                display: flex;
+                align-items: center;
+                position: relative;
+                gap: 15px;
+    
+                img {
+                    width: 55px;
+                    height: 55px;
+                    flex-shrink: 0;
+                }
+                .product-quantity {
+                    @include center-child;
+                    font-weight: 500;
+                    font-size: 12px;
+                    position: absolute;
+                    left: 40px;
+                    top: 0;
+                    width: 20px;
+                    height: 20px;
+                    background: $primary-blue;
+                    color: $bg-blue;
+                    border-radius: 50%;
+                }
+                .variation {
+                    display: flex;
+                    gap: 5px;
+                }
+            }
+            .product-total {
+                margin-left: 15px;
+            }
+        }
+        .order-total {
+            bdi, bdi span {
+                font-weight: 900;
+            }
+        }
+    }
+    @include tablet {
+        .woocommerce-checkout-review-order-table {
+            padding: $tabletSides;
+            border: 1px solid $line-grey;
+            border-radius: 4px;
+        }
+    }
+}

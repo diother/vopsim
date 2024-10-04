@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;800&display=swap');
+
+html, body, h1, h2, h3, h4, h5, h6, p, span, input, button {
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 0;
+}
+html, body {
+    text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    -moz-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+}
+
+$heading: "h1, .related > h2, .cross-sells > h2, .link-container > .first-row > a > h2";
+$body: "body, p, span, input, button, select, h2, h3, h4, h5, h6";
+
+#{$heading} {
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 120%;
+    overflow: hidden;
+}
+#{$body} {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 160%;
+}
+@include tablet {
+    #{$heading} {
+        font-size: 38px;
+
+        &.display-heading {
+            font-size: 42px;
+        }
+    }
+}
+@include desktop {
+    #{$heading} {
+        font-size: 48px;
+
+        &.display-heading {
+            font-size: 56px;
+        }
+    }
+    #{$body} {
+        font-size: 19px;
+    }
+}

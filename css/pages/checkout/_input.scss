@@ -1,0 +1,93 @@
+p.form-row {
+    position: relative;
+    transition: .2s $transition;
+
+    label {
+        line-height: 100%;
+        position: absolute;
+        left: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: $text-grey;
+        transition: inherit;
+        background: #fff;
+        pointer-events: none;
+
+        abbr.required {
+            display: none;
+        }
+    }
+    input {
+        width: 100%;
+        padding: 25px 15px 10px;
+        transition: inherit;
+        border: 1px $line-grey solid;
+        border-radius: 4px;
+    }
+    &.active {
+        label {
+            top: 13px;
+            transform: none;
+            font-size: 13px;
+            color: $text-grey;
+        }
+        input {
+            border-color: #000;
+        }
+    }
+    &.error {
+        label {
+            color: red !important;
+        }
+        input {
+            border-color: red;
+
+            &:focus {
+                outline: 1px solid red;
+            }
+        }
+    }
+}
+// The select input type
+#billing_state_field, 
+#shipping_state_field {
+    label {
+        z-index: 1;
+    }
+    .select2-selection__placeholder {
+        color: $text-grey;
+    }
+    .select2-selection {
+        height: 61px;
+        border-color: $line-grey;
+    }
+    .select2-container {
+        height: 61px;
+    }
+    .select2-selection__rendered {
+        padding: 25px 15px 10px;
+        color: $text-grey;
+    }
+    .select2-selection__arrow {
+        position: absolute;
+        top: 50%;
+        right: 15px;
+        transform: translateY(-50%);
+    
+        b {
+            border-color: $text-grey transparent transparent transparent;
+        }
+    }
+    &.active {
+        .select2-selection {
+            border-color: #000;
+        }
+        .select2-selection__rendered {
+            color: #000;
+        }
+        .select2-selection__arrow b {
+            border-color: #000 transparent transparent transparent;
+        }
+        
+    }
+}

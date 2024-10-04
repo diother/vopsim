@@ -1,0 +1,32 @@
+body.page-template-default {
+    .title-container,
+    .content-container {
+        padding: 15px $mobileSides 0;
+    }
+    .content-container {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+
+        .wp-block-group__inner-container {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+    }
+    @include tablet {
+        .title-container,
+        .content-container {
+            padding: 15px $tabletSides 0;
+        }
+    }
+    @include desktop {
+        .breadcrumbs,
+        .title-container,
+        .content-container {
+            margin: 0 auto;
+            max-width: 1280px;
+            box-sizing: content-box;
+        }
+    }
+}

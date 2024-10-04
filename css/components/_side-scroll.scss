@@ -1,0 +1,22 @@
+@include laptop {
+    .side-scroll {
+        transition: all 200ms $transition;
+        position: relative;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        white-space: nowrap;
+        transform: scale(1);
+        will-change: transform;
+        user-select: none;
+        cursor: pointer;
+
+        &:hover {
+            cursor: pointer;
+        }
+        &.active {
+            cursor: grabbing;
+            cursor: -webkit-grabbing;
+            transform: scale(.98);
+        }
+    }
+}

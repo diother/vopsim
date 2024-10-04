@@ -1,0 +1,67 @@
+.product-section, .related, .cross-sells {
+    margin-top: 75px;
+
+    h1, & > h2 {
+        padding: 0 $mobileSides 25px;
+    }
+    .product-container, .products {
+        padding: 0 $mobileSides;
+        overflow-x: auto;
+        display: flex;
+        gap: 10px;
+    }
+    .product {
+        width: min(80%, 300px);
+        flex-shrink: 0;
+    }
+    @include tablet {
+        .product-container, .products {
+            padding: 0 $tabletSides;
+        }
+    }
+}
+.best-sellers-section, .premium-section {
+    @include laptop {
+        display: flex;
+        margin-top: 100px;
+
+        .product-container {
+            &:hover {
+                cursor: pointer;
+            }
+        }
+        .title-container {
+            @include center-child-vertically;
+            background: $bg-grey;
+            width: max(25vw, 325px);
+            flex-shrink: 0;
+        }
+        h1 {
+            padding: 0 50px;
+        }
+    }
+}
+.epoxy-section, .related, .cross-sells {
+    @include laptop {
+        margin: 100px 0 0;
+
+        h1, & > h2 {
+            text-align: center;
+        }
+        .product-container, .products {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px 10px;
+        }
+        .product {
+            width: auto;
+        }
+    }
+    @include desktop {
+        .product-container, .products {
+            max-width: $desktopWidth;
+            margin: 0 auto;
+            box-sizing: content-box;
+        }
+    }
+}

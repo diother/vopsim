@@ -1,0 +1,112 @@
+body.empty-cart.woocommerce-cart .content-area ~ footer {
+    margin-bottom: 0;
+}
+body.woocommerce-cart .content-area {
+    .woocommerce-notices-wrapper {
+        display: none;
+    }
+    .title-container {
+        padding: 15px $mobileSides 0;
+    }
+    .woocommerce-cart-form__contents > tbody {
+        padding: 25px $mobileSides 0;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+
+        tr:last-child {
+            display: none;
+        }
+    }
+    .cart_totals {
+        padding: 50px $mobileSides 0;
+
+        .order-review {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+
+            & > div {
+                display: flex;
+                justify-content: space-between;
+            }
+            .shipping {
+                padding-bottom: 15px;
+                border-bottom: 1px solid $line-grey;
+            }
+            .total .result {
+                bdi, span {
+                    font-weight: 900;
+                }
+                
+            }
+        }
+    }
+    .desktop-button {
+        display: none;
+        margin-top: 25px;
+    }
+    .mobile-button {
+        width: 100%;
+        height: 75px;
+        position: fixed;
+        padding: 0 $mobileSides;
+        bottom: 0;
+        left: 0;
+        background: #fff;
+        z-index: 5;
+
+        .center-container {
+            @include center-child-vertically;
+            height: 100%;
+        }
+        a {
+            width: 100%;
+        }
+    }
+    &~ footer {
+        margin-bottom: 75px;
+    }
+    
+    @include tablet {
+        .title-container {
+            padding: 15px $tabletSides 0;
+        }
+        .woocommerce-cart-form__contents > tbody {
+            padding: 25px $tabletSides 0;
+        }
+        .mobile-button {
+            padding: 0 $tabletSides;
+        }
+    }
+    @include laptop {
+        .desktop-button {
+            display: block;
+        }
+        .mobile-button {
+            display: none;
+        }
+        .woocommerce {
+            display: grid;
+            grid-template-columns: 4fr 3fr;
+            padding: 15px $tabletSides 0;
+            column-gap: 50px;
+        }
+        .woocommerce-cart-form__contents > tbody, .cart_totals {
+            padding: 0;
+        }
+        .cross-sells {
+            grid-area: 2 / 1 / 3 / 3;
+        }
+        &~ footer {
+            margin-bottom: 0;
+        }
+    }
+    @include breakpoint(1000px) {
+        .breadcrumbs, .title-container, .woocommerce {
+            margin: 0 auto;
+            max-width: 1000px;
+            box-sizing: content-box;
+        }
+    }
+}

@@ -1,0 +1,86 @@
+html.active-menu {
+    overflow: hidden;
+
+    body {
+        overflow: hidden;
+    }
+}
+.mobile-menu {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: $bg-blue;
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: 500ms $transition;
+    transition-property: transform;
+    z-index: 7;
+
+    a {
+        text-decoration: none;
+        width: 100%;
+    }
+    &.active {
+        opacity: 1;
+    }
+    &.animation {
+        transform: translateY(0);
+    }
+    span {
+        font-size: 16px;
+    }
+    .close-button {
+        position: absolute;
+        right: $mobileSides;
+        top: 25px;
+        width: 30px;
+        height: 30px;
+        background: $primary-blue;
+        border-radius: 50%;
+        @include center-child;
+        z-index: 3;
+
+        &:before, &:after {
+            content: "";
+            position: absolute;
+            width: 15px;
+            height: 2px;
+            background: #fff;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+        &:after {
+            transform: translate(-50%, -50%) rotate(-45deg);
+        }
+    }
+    .panel {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        padding: 75px $tabletSides 0;
+
+        & > a {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            align-items: center;
+
+            &:after {
+                content: '';
+                width: 10px;
+                height: 10px;
+                border-style: solid;
+                border-color: $text-color;
+                border-width: 2px 2px 0 0;
+                display: block;
+                transform: rotate(45deg);
+            }
+        }
+    }
+    @include laptop {
+        display: none;
+    }
+}

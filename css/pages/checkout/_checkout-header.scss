@@ -1,0 +1,45 @@
+.checkout-header {
+    padding: 50px $mobileSides;
+    background: $bg-blue;
+    color: $text-color;
+    
+    .center-container {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+    .text-container {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+
+        .benefits {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+    }
+    @include tablet {
+        padding: 50px $tabletSides;
+    }
+    @include breakpoint(770px) {
+        .center-container {
+            flex-direction: row;
+            align-items: center;
+            gap: 0;
+        }
+        img {
+            min-width: 0;
+            width: 75%;
+            max-width: 500px;
+        }
+    }
+    @include desktop {
+        padding-bottom: 300px;
+        .center-container {
+            max-width: $desktopWidth;
+            box-sizing: content-box;
+            margin: 0 auto;
+        }
+    }
+}

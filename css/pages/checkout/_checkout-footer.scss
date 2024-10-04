@@ -1,0 +1,109 @@
+.checkout-footer {
+    // margin-top: 35px;
+    padding: 35px 0;
+    background: $bg-grey;
+    border-radius: 0 25px 0 0;
+
+    h2 {
+        font-weight: 900;
+        font-size: 24px;
+        line-height: 120%;
+        overflow: hidden;
+    }
+    hr {
+        margin: 35px 0;
+    }
+    .secure-container {
+        padding: 0 $mobileSides;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        img {
+            width: 160px;
+            height: auto;
+        }
+    }
+    .testimonials {
+        padding: 0 $mobileSides;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        .testi {
+            background: $bg-blue;
+            color: $text-color;
+            border-radius: 15px;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .img-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+    
+            img {
+                position: relative;
+                height: 40px;
+                width: 40px;
+                border-radius: 50%;
+            }
+            span {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+    
+                &:before {
+                    content: 'I';
+                    font-size: 22px;
+                    width: 32px;
+                    height: 32px;
+                    @include center-child;
+                    transform: rotate(90deg);
+                }
+            }
+        }
+    }
+    .icon-container {
+        padding: 0 $mobileSides;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+
+            img {
+                height: 75px;
+                width: auto;
+            }
+            span {
+                text-align: center;
+            }
+        }
+    }
+    .faq {
+        h2 {
+            padding: 0 $mobileSides;
+        }
+    }
+    @include tablet {
+        padding: 35px $tabletSides;
+
+        .secure-container,
+        .testimonials,
+        .icon-container,
+        .faq h2 {
+            padding: 0;
+        }
+    }
+    @include breakpoint(770px) {
+        padding: 35px;
+    }
+
+}

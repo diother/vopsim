@@ -1,0 +1,33 @@
+// Homepage 
+@import 'homepage/hero';
+@import 'homepage/our-product';
+@import 'homepage/consultation';
+@import 'homepage/our-service';
+
+// Cart
+@import 'cart/cart';
+@import 'cart/cart-empty';
+@import 'cart/cart-item';
+@import 'cart/cart-layout';
+
+// Product Archive 
+@import 'product-archive/product-archive';
+
+// Single Product
+@import 'single-product/single-product';
+@import 'single-product/gallery-slider.scss';
+
+// Checkout 
+@import 'checkout/index';
+@import 'checkout/input';
+@import 'checkout/order-review';
+@import 'checkout/payments';
+@import 'checkout/thank-you';
+@import 'checkout/checkout-header';
+@import 'checkout/checkout-footer';
+@import 'checkout/woocommerce';
+
+// Blog Pages
+@import 'blog-pages/blog-pages';
+
+@import 'new-homepage/hero';

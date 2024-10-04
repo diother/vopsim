@@ -1,0 +1,28 @@
+.woocommerce-message {
+    margin-top: 15px;
+    display: block;
+    padding: 15px $mobileSides;
+    background: $bg-blue;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    border-top-style: solid;
+    border-top-width: 2px;
+
+    .button {
+        flex-shrink: 0;
+        padding: 5px 15px;
+        background: #fff;
+        border-radius: 50px;
+    }
+
+    @include tablet {
+        padding: 15px $tabletSides;
+    }
+    @include desktop {
+        max-width: $desktopWidth;
+        margin: 15px auto 0;
+    }
+}

@@ -1,0 +1,16 @@
+.breadcrumbs, .woocommerce-breadcrumb {
+    color: $text-grey;
+    padding: 15px $mobileSides 0;
+
+    a {
+        color: $text-grey;
+    }
+    @include tablet {
+        padding: 15px $tabletSides 0;
+    }
+    @include desktop {
+        margin: 0 auto;
+        max-width: $desktopWidth;
+        box-sizing: content-box;
+    }
+}
